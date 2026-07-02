@@ -1,0 +1,131 @@
+Enter the disease name :parkinson disease
+Title : Parkinson disease
+Definition : A progressive degenerative disorder of the central nervous system characterized by loss of dopamine producing neurons in the substantia nigra and the presence of Lewy bodies in the substantia nigra and locus coeruleus. Signs and symptoms include tremor which is most pronounced during rest, muscle rigidity, slowing of the voluntary movements, a tendency to fall back, and a mask-like facial expression.
+1
+variant type : single nucleotide variant
+ Gene name : VPS35
+ Chromosome no. : 16
+protein change : M40I
+ Gene id : 55737
+2
+variant type : single nucleotide variant
+ Gene name : PRKAG2
+ Chromosome no. : 07
+protein change : I230V, I231V, I247V, I251V, I347V, I348V, I364V, I366V, I375V, I376V, I427V, I428V, I471V, I472V
+ Gene id : 51422
+3
+variant type : single nucleotide variant
+ Gene name : GBA1
+ Chromosome no. : 01
+protein change : F299C, F337C, F386C
+ Gene id : 2629
+4
+variant type : single nucleotide variant
+ Gene name : MAPT
+ Chromosome no. : 17
+protein change : Y441*, Y516*
+ Gene id : 4137
+5
+variant type : single nucleotide variant
+ Gene name : RHOT1
+ Chromosome no. : ZZZ
+protein change : 
+ Gene id : 55288
+6
+variant type : single nucleotide variant
+ Gene name : LRRK2
+ Chromosome no. : 12
+protein change : Q1648E
+ Gene id : 120892
+7
+variant type : copy number loss
+ Gene name : LNCR-SMAL
+ Chromosome no. : 06
+protein change : 
+ Gene id : 105378097
+8
+variant type : single nucleotide variant
+ Gene name : FUS
+ Chromosome no. : 16
+protein change : P264R, P267R, P268R
+ Gene id : 2521
+9
+variant type : Deletion
+ Gene name : ATP13A2
+ Chromosome no. : 01
+protein change : Y16fs
+ Gene id : 23400
+10
+variant type : Duplication
+ Gene name : PINK1
+ Chromosome no. : 01
+protein change : D430*
+ Gene id : 65018
+11
+variant type : single nucleotide variant
+ Gene name : VPS13C
+ Chromosome no. : 15
+protein change : L3141*, L3184*
+ Gene id : 54832
+12
+variant type : single nucleotide variant
+ Gene name : VPS13C
+ Chromosome no. : 15
+protein change : E2604*, E2647*
+ Gene id : 54832
+13
+variant type : single nucleotide variant
+ Gene name : VPS13C
+ Chromosome no. : 15
+protein change : 
+ Gene id : 54832
+14
+variant type : Deletion
+ Gene name : ATP13A2
+ Chromosome no. : 01
+protein change : V389fs, V394fs
+ Gene id : 23400
+15
+variant type : single nucleotide variant
+ Gene name : PINK1
+ Chromosome no. : 01
+protein change : S419P
+ Gene id : 65018
+16
+variant type : single nucleotide variant
+ Gene name : GIGYF2
+ Chromosome no. : 02
+protein change : 
+ Gene id : 26058
+17
+variant type : single nucleotide variant
+ Gene name : LRRK2
+ Chromosome no. : 12
+protein change : R506*
+ Gene id : 120892
+18
+variant type : single nucleotide variant
+ Gene name : RAB32
+ Chromosome no. : 06
+protein change : G5E
+ Gene id : 10981
+19
+variant type : Deletion
+ Gene name : MIR6084
+ Chromosome no. : 01
+protein change : E44fs
+ Gene id : 102464833
+20
+variant type : single nucleotide variant
+ Gene name : HNRNPA2B1
+ Chromosome no. : 07
+protein change : Y271C, Y283C
+ Gene id : 3181
+Enter the gene name :GBA1
+['F299C', 'F337C', 'F386C']
+Enter the name of organism :human
+P04062
+Expected : F
+Actual : I
+Expected : F
+Actual : D
