@@ -10,7 +10,6 @@ try :
       term = f"{corrected_name}[exacttitle]"
     )
    record = Entrez.read(handle)
-   print(record["IdList"])
    disease_id = record["IdList"]
    if len(disease_id) == 0 :
       handle = Entrez.esearch(
@@ -29,6 +28,7 @@ try :
         )
         rec = Entrez.read(disease_data)
         print(rec["DocumentSummarySet"]["DocumentSummary"][0]["Title"])
+        exit()
    else :
      for disease_id in record["IdList"] :
         disease_data = Entrez.esummary(
@@ -63,8 +63,9 @@ try :
              print(f" Gene id : {clinvar_rec["DocumentSummarySet"]["DocumentSummary"][0]["genes"][0]["GeneID"]}")
              gene = clinvar_rec["DocumentSummarySet"]["DocumentSummary"][0]["gene_sort"]
              mutation[gene] = []
-             protein = clinvar_rec["DocumentSummarySet"]["DocumentSummary"][0]["protein_change"]
-             mutation[gene].append(protein)
+             protein = clinvar_rec["DocumentSummarySet"]["DocumentSummary"][0]["protein_change"].split(",")
+             for p in protein :
+               mutation[gene].append(p.strip())
 
 except Exception as E :
    print( f"error : {E}")
@@ -93,13 +94,21 @@ def protein_info(gene_name,mutation) :
             print (f"frameshift mutation detected. Please check the fasta file for the original protein sequence.")
          elif "*" in protein :
             print(f"nonsense mutation detected. Please check the fasta file for the original protein sequence.")
+
+            print("Expected:", protein[0])
+            print("Actual  :", sequence[cut_position-1])
+
+            if sequence[cut_position-1] == protein[0]:
+               print("MATCH")
+            else:
+                print("NO MATCH")
             header= f">Nonsence_mutaion_seq{protein}"
             cut_position = int(protein[1:-1])
-            new_sequence = sequence[:cut_position-1] + "*"
+            new_sequence = sequence[:cut_position-1]
             with open("disease_protein.fasta","a") as f :
                f.write(header)
                f.write("\n")
-               f.write(new_sequence)
+               f.write(str(new_sequence))
          else :
             cut_position = int(protein[1:-1])
             new_aa = protein[-1]
@@ -109,7 +118,10 @@ def protein_info(gene_name,mutation) :
                with open("disease_protein.fasta","a") as f :
                   f.write(header)
                   f.write("\n")
-                  f.write(new_sequence)
+                  f.write(str(new_sequence))
+            else :
+               print(f"Expected : {protein[0]}")
+               print(f"Actual : {sequence[cut_position-1]}")
    except Exception as E :
       print(f"error : {E}")
 protein_info(gene_name,mutation)
